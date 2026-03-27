@@ -3,59 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>WURSTBROT-PROTOKOLL: MOBILE DOMINANZ</title>
+    <title>WURSTBROT-PROTOKOLL: BOSS COLLECTION</title>
     <style>
-        :root { --red: #ff0000; --gold: #ffcc00; --dark: #0a0a0a; }
-        body, html { margin: 0; padding: 0; background: var(--dark); color: #eee; font-family: 'Courier New', monospace; overflow: hidden; touch-action: none; }
-
+        :root { --red: #d32f2f; --gold: #ffcc00; --dark: #0a0a0a; }
+        body, html { margin: 0; padding: 0; background: var(--dark); color: #eee; font-family: 'Arial Black', Gadget, sans-serif; overflow: hidden; touch-action: none; text-transform: uppercase; }
+        
         .presentation-container { width: 100vw; height: 100vh; display: flex; transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1); }
-
-        .slide {
-            min-width: 100vw; height: 100vh;
-            display: flex; flex-direction: column; justify-content: center; align-items: center;
+        
+        .slide { 
+            min-width: 100vw; height: 100vh; 
+            display: flex; flex-direction: column; justify-content: center; align-items: center; 
             position: relative; padding: 20px; box-sizing: border-box; text-align: center;
         }
 
-        .intro { background: radial-gradient(circle, #441111 0%, #000 100%); border: 5px solid var(--red); }
-        .outro { background: radial-gradient(circle, #114411 0%, #000 100%); border: 5px solid var(--gold); }
-        .scheibe-odd { background: #111; }
-        .scheibe-even { background: #1a1a1a; border-left: 10px solid var(--red); }
+        /* Die 4 Styles variieren jetzt nur noch subtil bei den Rändern, alles bleibt mittig */
+        .style-0 { background: #0f0f0f; border-top: 15px solid var(--red); }
+        .style-1 { background: #111111; border-bottom: 15px solid var(--red); }
+        .style-2 { background: #080808; border-top: 15px solid var(--gold); }
+        .style-3 { background: #050505; border-bottom: 15px solid var(--gold); }
 
-        h1 { font-size: 3em; text-transform: uppercase; margin: 0; color: var(--red); text-shadow: 2px 2px #000; }
-        h2 { font-size: 1.5em; color: var(--gold); margin-bottom: 10px; }
+        h1 { font-size: 2.5em; margin: 0; color: var(--red); text-shadow: 2px 2px #000; letter-spacing: -1px; }
+        .content { font-size: 1.6em; font-weight: bold; max-width: 90%; margin-top: 25px; color: #fff; line-height: 1.3; }
+        
+        /* ASCII Styling - Deutlich vergrößert */
+        .ascii-art { font-size: 14px; line-height: 1.15; white-space: pre; color: #888; margin: 25px 0; font-family: monospace; font-weight: bold; }
+        .ascii-title { font-size: 8px; line-height: 1.1; white-space: pre; color: var(--red); margin: 10px 0; font-family: monospace; font-weight: bold; }
+        
+        .page-num { position: absolute; top: 20px; right: 20px; font-size: 1.2em; color: #555; font-family: monospace; }
+        .nav-hint { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: #444; font-size: 0.7em; font-family: sans-serif; }
 
-        .ascii { font-size: 8px; line-height: 1.1; white-space: pre; margin: 15px 0; color: #777; overflow: hidden; }
-        .content { font-size: 1.8em; font-weight: bold; max-width: 90%; margin-top: 15px; color: #fff; text-transform: uppercase; }
-
-        .nav-hint { position: absolute; bottom: 20px; color: #666; font-size: 0.8em; }
-        .page-num { position: absolute; top: 20px; right: 20px; font-size: 1.2em; color: var(--red); font-weight: bold; }
-        .stamp { position: absolute; top: 20px; left: 20px; border: 2px solid var(--red); padding: 5px; transform: rotate(-15deg); color: var(--red); font-size: 0.8em; font-weight: bold; }
-
-        @media (min-width: 768px) {
-            h1 { font-size: 5em; }
-            h2 { font-size: 2.5em; }
-            .content { font-size: 3em; }
-            .ascii { font-size: 10px; }
+        @media (min-width: 768px) { 
+            h1 { font-size: 4.5em; } 
+            .content { font-size: 3em; } 
+            .ascii-art { font-size: 24px; } /* Massiv auf dem Desktop */
+            .ascii-title { font-size: 14px; }
         }
     </style>
 </head>
 <body>
 
 <div class="presentation-container" id="container">
-    <div class="slide intro">
-        <div class="stamp">TOP SECRET</div>
-        <h1>WURSTBROT<br>PROTOKOLL</h1>
-        <h2>MACHTDEMONSTRATION</h2>
-        <div class="ascii">
+    <div class="slide" style="background: radial-gradient(circle, #220000 0%, #000 100%); border: 15px solid var(--red);">
+        <div class="ascii-title">
+██╗    ██╗██╗   ██╗██████╗ ███████╗████████╗
+██║    ██║██║   ██║██╔══██╗██╔════╝╚══██╔══╝
+██║ █╗ ██║██║   ██║██████╔╝███████╗   ██║   
+██║███╗██║██║   ██║██╔══██╗╚════██║   ██║   
+╚███╔███╔╝╚██████╔╝██║  ██║███████║   ██║   
+ ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝   ╚═╝   
+
+██████╗ ██████╗  ██████╗ ████████╗
+██╔══██╗██╔══██╗██╔═══██╗╚══██╔══╝
+██████╔╝██████╔╝██║   ██║   ██║   
+██╔══██╗██╔══██╗██║   ██║   ██║   
+██████╔╝██║  ██║╚██████╔╝   ██║   
+╚═════╝ ╚═╝  ╚═╝ ╚═════╝    ╚═╝   
+        </div>
+        <h1 style="display:none;">WURSTBROT</h1> <div class="content" style="color: var(--gold); font-size: 2em;">60 SCHEIBEN. ALLES MEINS.</div>
+        <div class="ascii-art" style="font-size: 12px; color: #666;">
   ____________________________
  /                            \
-|  [X] 60 SCHEIBEN             |
 |  [X] KRIEG STATT MEETING     |
+|  [X] MACHTDEMONSTRATION      |
 |  [X] CEO DER LAGE            |
  \____________________________/
         </div>
-        <div class="content">"Der Beamer wirft ein Licht auf meinen Sieg."</div>
-        <div class="nav-hint">Wische nach links oder nutze Pfeiltasten</div>
+        <div class="nav-hint">PFEILTASTEN ODER WISCHEN</div>
     </div>
 
     </div>
@@ -85,30 +98,58 @@
         "Vorletzte Warnung: Kein Meeting.", "MAHLZEIT. Alles meins. Punkt."
     ];
 
+    // Größeres, präsenteres ASCII-Arsenal
+    const asciiPool = [
+        "  _______  \n /       \\ \n|  WURST  |\n \\_______/ ",
+        "  _______  \n /       \\ \n|   CEO   |\n \\_______/ ",
+        "  -------  \n | BROT! | \n  -------  ",
+        "  /\\/\\/\\/\\ \n <  BOSS  >\n  \\/\\/\\/\\/ ",
+        "  [======] \n  |  60  | \n  [======] ",
+        "  >=====>  \n  FLEISCH  \n  <=====<  ",
+        "  *** *** \n   KRIEG   \n  *** *** ",
+        " +-------+ \n | MEINS | \n +-------+ "
+    ];
+
     const container = document.getElementById('container');
 
     lines.forEach((line, i) => {
         const slide = document.createElement('div');
-        slide.className = `slide ${i % 2 === 0 ? 'scheibe-odd' : 'scheibe-even'}`;
+        
+        // Rotiere durch die 4 subtilen Rahmen-Styles
+        const styleClass = `style-${i % 4}`;
+        const asciiArt = asciiPool[i % asciiPool.length];
+        const titleColor = (i % 3 === 0) ? "var(--gold)" : "var(--red)";
+
+        slide.className = `slide ${styleClass}`;
         slide.innerHTML = `
             <div class="page-num">#${i + 1}</div>
-            <h1>KLATSCHE #${i + 1}</h1>
+            <div class="ascii-art">${asciiArt}</div>
+            <h1 style="color: ${titleColor};">KLATSCHE ${i + 1}</h1>
             <div class="content">"${line}"</div>
-            <div class="footer" style="margin-top:20px; color:var(--red); font-size:0.7em">WURSTBROT-PROTOKOLL // CEO</div>
         `;
         container.appendChild(slide);
     });
 
+    // OUTRO
     const outro = document.createElement('div');
-    outro.className = "slide outro";
+    outro.className = "slide";
+    outro.style.background = "#050505";
+    outro.style.borderTop = "15px solid var(--gold)";
+    outro.style.borderBottom = "15px solid var(--gold)";
     outro.innerHTML = `
-        <h1>PROTOKOLL ENDE</h1>
+        <div class="ascii-art" style="color: var(--gold);">
+  \\ \\ / /
+   \\ V / 
+    | |  
+    |_|  
+        </div>
+        <h1 style="font-size: 3em;">PROTOKOLL ENDE</h1>
         <div class="content">"Hier wird nicht diskutiert, hier wird gefressen. Punkt."</div>
-        <div style="font-size: 1.5em; margin-top: 20px; color: var(--gold)">ICH BIN SATT.</div>
+        <div style="font-size: 1.5em; margin-top: 40px; color: var(--gold);">ICH BIN SATT. DU BIST WEG.</div>
     `;
     container.appendChild(outro);
 
-    // NAVIGATION LOGIC
+    // NAVIGATION
     let currentSlide = 0;
     const totalSlides = lines.length + 2;
 
@@ -126,18 +167,14 @@
     // Touch (Swipe)
     let touchstartX = 0;
     let touchendX = 0;
-
+    
     window.addEventListener('touchstart', e => { touchstartX = e.changedTouches[0].screenX; });
-    window.addEventListener('touchend', e => {
+    window.addEventListener('touchend', e => { 
         touchendX = e.changedTouches[0].screenX;
-        handleGesture();
-    });
-
-    function handleGesture() {
         if (touchendX < touchstartX - 50) { if (currentSlide < totalSlides - 1) currentSlide++; }
         if (touchendX > touchstartX + 50) { if (currentSlide > 0) currentSlide--; }
         updateSlide();
-    }
+    });
 </script>
 </body>
 </html>
