@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>WURSTBROT-PROTOKOLL: MOBILE DOMINANZ</title>
+    <style>
+        :root { --red: #ff0000; --gold: #ffcc00; --dark: #0a0a0a; }
+        body, html { margin: 0; padding: 0; background: var(--dark); color: #eee; font-family: 'Courier New', monospace; overflow: hidden; touch-action: none; }
+
+        .presentation-container { width: 100vw; height: 100vh; display: flex; transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1); }
+
+        .slide {
+            min-width: 100vw; height: 100vh;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            position: relative; padding: 20px; box-sizing: border-box; text-align: center;
+        }
+
+        .intro { background: radial-gradient(circle, #441111 0%, #000 100%); border: 5px solid var(--red); }
+        .outro { background: radial-gradient(circle, #114411 0%, #000 100%); border: 5px solid var(--gold); }
+        .scheibe-odd { background: #111; }
+        .scheibe-even { background: #1a1a1a; border-left: 10px solid var(--red); }
+
+        h1 { font-size: 3em; text-transform: uppercase; margin: 0; color: var(--red); text-shadow: 2px 2px #000; }
+        h2 { font-size: 1.5em; color: var(--gold); margin-bottom: 10px; }
+
+        .ascii { font-size: 8px; line-height: 1.1; white-space: pre; margin: 15px 0; color: #777; overflow: hidden; }
+        .content { font-size: 1.8em; font-weight: bold; max-width: 90%; margin-top: 15px; color: #fff; text-transform: uppercase; }
+
+        .nav-hint { position: absolute; bottom: 20px; color: #666; font-size: 0.8em; }
+        .page-num { position: absolute; top: 20px; right: 20px; font-size: 1.2em; color: var(--red); font-weight: bold; }
+        .stamp { position: absolute; top: 20px; left: 20px; border: 2px solid var(--red); padding: 5px; transform: rotate(-15deg); color: var(--red); font-size: 0.8em; font-weight: bold; }
+
+        @media (min-width: 768px) {
+            h1 { font-size: 5em; }
+            h2 { font-size: 2.5em; }
+            .content { font-size: 3em; }
+            .ascii { font-size: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="presentation-container" id="container">
+    <div class="slide intro">
+        <div class="stamp">TOP SECRET</div>
+        <h1>WURSTBROT<br>PROTOKOLL</h1>
+        <h2>MACHTDEMONSTRATION</h2>
+        <div class="ascii">
+  ____________________________
+ /                            \
+|  [X] 60 SCHEIBEN             |
+|  [X] KRIEG STATT MEETING     |
+|  [X] CEO DER LAGE            |
+ \____________________________/
+        </div>
+        <div class="content">"Der Beamer wirft ein Licht auf meinen Sieg."</div>
+        <div class="nav-hint">Wische nach links oder nutze Pfeiltasten</div>
+    </div>
+
+    </div>
+
+<script>
+    const lines = [
+        "Meine Basis ist Granit, deine nur Toastbrot-Krümel.", "Butter bei die Fische? Nein, Butter bei die Wurst!",
+        "Dein Rap ist wie Billig-Aufschnitt – wässrig.", "Ich bin der CEO, du fegst die Krümel weg.",
+        "60 Scheiben Dominanz – ein pures Statement.", "Mein Belag hat mehr Schichten als deine Karriere.",
+        "Schinken aus Westfalen, Flow aus der Zukunft.", "Du kiffst, ich fresse – Substanz gewinnt.",
+        "Mein Messer ist schärfer als dein Verstand.", "Erste Etappe: Dein Hunger wächst, meine Macht auch.",
+        "Salami-Taktik: Ich nehme dir alles weg.", "Du nennst es Frühstück, ich eine Hinrichtung.",
+        "Dein Vibe ist wie Margarine – billiger Ersatz.", "Ich belege das Game neu, du suchst die Kruste.",
+        "15 Scheiben liegen – du siehst blass aus.", "Mortadella-Massaker: Dein Team ist Beilage.",
+        "Kein Teller nötig – die Welt ist meine Unterlage.", "Jeder Biss ein Punch, jede Scheibe ein Grabstein.",
+        "Senf dazu? Nein, mein Flow brennt von allein.", "Ein Drittel durch – Zeit für die Kapitulation.",
+        "Immer noch Wurst.", "Immer noch Boss.", "Dein Magen rebelliert, mein Imperium expandiert.",
+        "Härter als du.", "Fetter als du.", "Besser als du.", "Meister der Mettwurst.", "Aufschnitt-Aristokrat.",
+        "Leberwurst-Legende.", "Teewurst-Terror.", "Bierschinken-Baron.", "Jagdwurst-Jäger.", "Pfeffersalami-Prophet.",
+        "Krakauer-König.", "Cervelat-Chef.", "Geflügelrolle-Gott.", "Lyoner-Lord.", "Schwarzwälder-Schrecken.",
+        "Lachsschinken-Leader.", "Halbzeit: Wer jetzt noch steht, hat nichts verstanden.",
+        "Leberwurst-Level: Streichzart, aber tödlich.", "Die Antwort auf alles ist Fleisch.",
+        "Mein Brot ist massiv wie ein Safe.", "Aufschnitt-Anarchie.", "Wurst-Wahnsinn.", "Protein-Prügel.",
+        "Fett-Finalisierung.", "Sättigungs-Sieg.", "Krusten-Krieger.", "Goldjubiläum: 50 Scheiben Vernichtung.",
+        "Die Luft wird dünn.", "Der Turm wird hoch.", "Dein Neid ist mein Senf.", "Kau oder geh unter.",
+        "Der Beamer glüht.", "Die Folie brennt.", "Das Brot bebt.", "Fast geschafft.",
+        "Vorletzte Warnung: Kein Meeting.", "MAHLZEIT. Alles meins. Punkt."
+    ];
+
+    const container = document.getElementById('container');
+
+    lines.forEach((line, i) => {
+        const slide = document.createElement('div');
+        slide.className = `slide ${i % 2 === 0 ? 'scheibe-odd' : 'scheibe-even'}`;
+        slide.innerHTML = `
+            <div class="page-num">#${i + 1}</div>
+            <h1>KLATSCHE #${i + 1}</h1>
+            <div class="content">"${line}"</div>
+            <div class="footer" style="margin-top:20px; color:var(--red); font-size:0.7em">WURSTBROT-PROTOKOLL // CEO</div>
+        `;
+        container.appendChild(slide);
+    });
+
+    const outro = document.createElement('div');
+    outro.className = "slide outro";
+    outro.innerHTML = `
+        <h1>PROTOKOLL ENDE</h1>
+        <div class="content">"Hier wird nicht diskutiert, hier wird gefressen. Punkt."</div>
+        <div style="font-size: 1.5em; margin-top: 20px; color: var(--gold)">ICH BIN SATT.</div>
+    `;
+    container.appendChild(outro);
+
+    // NAVIGATION LOGIC
+    let currentSlide = 0;
+    const totalSlides = lines.length + 2;
+
+    function updateSlide() {
+        container.style.transform = `translateX(-${currentSlide * 100}vw)`;
+    }
+
+    // Keyboard
+    window.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { if (currentSlide < totalSlides - 1) currentSlide++; }
+        else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { if (currentSlide > 0) currentSlide--; }
+        updateSlide();
+    });
+
+    // Touch (Swipe)
+    let touchstartX = 0;
+    let touchendX = 0;
+
+    window.addEventListener('touchstart', e => { touchstartX = e.changedTouches[0].screenX; });
+    window.addEventListener('touchend', e => {
+        touchendX = e.changedTouches[0].screenX;
+        handleGesture();
+    });
+
+    function handleGesture() {
+        if (touchendX < touchstartX - 50) { if (currentSlide < totalSlides - 1) currentSlide++; }
+        if (touchendX > touchstartX + 50) { if (currentSlide > 0) currentSlide--; }
+        updateSlide();
+    }
+</script>
+</body>
+</html>
